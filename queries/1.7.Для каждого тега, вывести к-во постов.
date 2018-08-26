@@ -1,0 +1,4 @@
+SELECT tags.id_tags, tags.title, COUNT(post_tag.posts_id_posts) FROM tags
+LEFT JOIN post_tag
+ON tags.id_tags=post_tag.tags_id_tags
+GROUP BY tags.id_tags

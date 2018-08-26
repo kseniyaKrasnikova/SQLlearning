@@ -1,0 +1,5 @@
+SELECT user.id_user, user.name
+FROM  `user`
+LEFT JOIN follower
+ON user.id_user = follower.user_id
+WHERE follower.follower_id is NULL

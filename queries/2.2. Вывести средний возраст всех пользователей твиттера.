@@ -1,0 +1,6 @@
+SELECT
+    AVG(
+        YEAR(CURRENT_DATE) - YEAR(birth_date) - (DATE_FORMAT(CURRENT_DATE, '%m%d') < DATE_FORMAT(birth_date, '%m%d'))
+    )
+FROM
+    `user`

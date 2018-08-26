@@ -1,0 +1,11 @@
+SELECT
+    *
+FROM
+    `posts`
+WHERE
+    posts.id_posts NOT IN(
+SELECT
+    post_tag.posts_id_posts
+FROM
+    post_tag
+)

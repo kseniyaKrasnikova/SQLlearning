@@ -1,0 +1,23 @@
+SELECT
+    author.id_author,
+    author.name,
+    COUNT(tags.id_tags) AS tags_count
+FROM
+    tags
+JOIN
+    post_tag
+ON
+    tags.id_tags = post_tag.tags_id_tags
+JOIN
+    posts
+ON
+    post_tag.posts_id_posts = posts.id_posts
+RIGHT JOIN
+    author
+ON
+    posts.author_id_author = author.id_author
+GROUP BY
+    author.id_author
+ORDER BY
+    tags_count
+DESC

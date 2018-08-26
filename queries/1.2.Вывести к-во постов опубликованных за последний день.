@@ -1,0 +1,21 @@
+SELECT
+    COUNT(*)
+FROM
+    `posts`
+WHERE
+    DATE(`date`) =(
+SELECT
+    MAX(DATE(`date`))
+FROM
+    `posts`
+)
+
+
+или 
+
+SELECT
+    COUNT(*)
+FROM
+    `posts`
+WHERE
+    DATE(DATE) = CURRENT_DATE-1

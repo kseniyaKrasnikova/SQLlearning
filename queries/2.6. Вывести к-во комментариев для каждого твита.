@@ -1,0 +1,5 @@
+SELECT twit.id, twit.content, COUNT(comment.twit_id)
+FROM  `twit`
+LEFT JOIN comment
+ON twit.id = comment.twit_id
+GROUP BY twit.id

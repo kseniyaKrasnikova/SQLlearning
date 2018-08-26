@@ -1,0 +1,5 @@
+SELECT user.id_user, user.name, COUNT(follower.user_id)
+FROM  `user`
+LEFT JOIN follower
+ON user.id_user = follower.user_id
+GROUP BY user.id_user

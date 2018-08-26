@@ -1,0 +1,18 @@
+SELECT
+    posts.id_posts,
+    posts.title,
+    posts.date,
+    GROUP_CONCAT(tags.title) AS tags
+FROM
+    posts
+JOIN
+    post_tag
+ON
+    post_tag.posts_id_posts = posts.id_posts
+JOIN
+    tags
+ON
+    tags.id_tags = post_tag.tags_id_tags
+GROUP BY
+    posts.id_posts
+
