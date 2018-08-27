@@ -1,2 +1,13 @@
 SELECT * from comment
 WHERE created_at >= DATE_SUB(NOW(),INTERVAL 10 HOUR)
+
+
+ИЛИ 
+
+SELECT *
+FROM `comment` 
+WHERE created_at >= DATE_SUB((SELECT MAX(created_at) from `comment`), INTERVAL 10 HOUR)  
+ORDER BY `comment`.`created_at` DESC
+
+
+
